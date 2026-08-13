@@ -8,8 +8,12 @@
 //   pub  /homing_status std_msgs/Bool        true while a go_zero move is in progress
 //
 // Wiring:
-//   ESP32-S3 native USB (D+/D- on GPIO19/20) -> PC, enumerates as /dev/ttyACM0,
-//     used ONLY for the micro-ROS agent link. Do not reuse GPIO19/20 for anything else.
+//   ESP32-S3 USB connector -> PC, enumerates as /dev/ttyACM0, used ONLY for
+//     the micro-ROS agent link. On boards with a native USB peripheral this
+//     runs over GPIO19/20; on boards with an external USB-UART bridge chip
+//     (e.g. CH343, shows as idVendor=1a86 in dmesg) it runs over UART0
+//     instead and GPIO19/20 are free for other use. Check platformio.ini's
+//     ARDUINO_USB_MODE/ARDUINO_USB_CDC_ON_BOOT flags match your board.
 //   ESP32-S3 UART1 -> ST3215 servo bus (half-duplex, single data line):
 //     SERVO_RX_PIN / SERVO_TX_PIN below, tied together per the ST3215 driver
 //     circuit (or straight into a Waveshare servo driver board if you have one).
@@ -180,6 +184,7 @@ void setup() {
   delay(500);
 
   // micro-ROS over native USB CDC (/dev/ttyACM0 on the PC side)
+  Serial.begin(115200);
   set_microros_serial_transports(Serial);
   delay(2000);
 
