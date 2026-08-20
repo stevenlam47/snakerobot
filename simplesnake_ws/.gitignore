@@ -1,5 +1,4 @@
-.pio
-.vscode
-install
-log
-build
+build/
+install/
+log/
+.vscode/
