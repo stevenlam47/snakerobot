@@ -6,13 +6,12 @@
 ## 📋 Table of Contents
 1. [System Overview](#system-overview)
 2. [Hardware Requirements](#hardware-requirements)
-3. [Wiring Diagram](#wiring-diagram)
-4. [Software Installation](#software-installation)
-5. [Configuration](#configuration)
-6. [Running the System](#running-the-system)
-7. [Optimization Guide](#optimization-guide)
-8. [Troubleshooting](#troubleshooting)
-9. [Quick Reference](#quick-reference)
+3. [Software Installation](#software-installation)
+4. [Configuration](#configuration)
+5. [Running the System](#running-the-system)
+6. [Optimization Guide](#optimization-guide)
+7. [Troubleshooting](#troubleshooting)
+8. [Quick Reference](#quick-reference)
 
 ---
 
